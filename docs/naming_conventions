@@ -1,0 +1,117 @@
+## 📌 Naming Conventions (Layer-wise)
+
+### 🥉 Bronze Layer (Raw Data)
+
+**Purpose:** Store data exactly as received from source systems.
+
+**Format:**
+
+```text
+<source_system>_<entity>
+```
+
+**Examples:**
+
+* `crm_cust_info`
+* `crm_sales_details`
+* `erp_loc_a101`
+
+---
+
+### 🥈 Silver Layer (Cleaned Data)
+
+**Purpose:** Clean, standardize, and validate data.
+
+**Format:**
+
+```text
+same_as_bronze
+```
+
+**Examples:**
+
+* `crm_cust_info`
+* `crm_sales_details`
+* `erp_loc_a101`
+
+👉 Naming remains the same to maintain traceability from source
+
+---
+
+### 🥇 Gold Layer (Business / Analytics)
+
+**Purpose:** Provide business-ready data for analysis.
+
+**Format:**
+
+**Dimension tables:**
+
+```text
+dim_<entity>
+```
+
+Examples:
+
+* `dim_customers`
+* `dim_products`
+
+**Fact tables:**
+
+```text
+fact_<event>
+```
+
+Examples:
+
+* `fact_sales`
+
+---
+
+### 🔑 Column Naming (All Layers)
+
+**Business keys:**
+
+```text
+<entity>_id
+```
+
+**Surrogate keys:**
+
+```text
+<entity>_key
+```
+
+**Attributes:**
+
+```text
+<descriptive_name>
+```
+
+**Dates:**
+
+```text
+<event>_date
+```
+
+**Measures:**
+
+```text
+<metric>
+```
+
+---
+
+### ⚙️ Stored Procedures
+
+**Format:**
+
+```text
+load_<layer>
+```
+
+**Examples:**
+
+* `load_bronze`
+* `load_silver`
+* `load_gold`
+

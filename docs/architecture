@@ -1,0 +1,38 @@
+## 🏗️ Data Warehouse Architecture
+
+This project follows the **Medallion Architecture (Bronze → Silver → Gold)** to build a structured and scalable data warehouse.
+
+---
+
+### 🥉 Bronze Layer (Raw Data)
+
+* Stores data exactly as received from source systems (CRM & ERP)
+* No transformations are applied
+* Acts as the **single source of truth**
+
+---
+
+### 🥈 Silver Layer (Cleaned Data)
+
+* Data is cleaned, standardized, and validated
+* Handles nulls, formatting issues, and inconsistencies
+* Prepares data for further transformation
+
+---
+
+### 🥇 Gold Layer (Business-Ready Data)
+
+* Data is transformed into **analytics-ready datasets**
+* Built using **dimension and fact tables (star schema)**
+* Contains business logic and integrated data
+
+---
+
+### 🎯 Overall Flow
+
+```text
+Raw Data → Cleaned Data → Business Insights
+(Bronze)   (Silver)        (Gold)
+```
+
+This layered approach improves **data quality, maintainability, and performance**, making it easier to perform analytics and generate insights.
